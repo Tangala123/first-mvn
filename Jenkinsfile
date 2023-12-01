@@ -1,17 +1,9 @@
 pipeline {
   agent any 
   stages {
-    stage("Git") {
-      when {
-        branch "main"
-      }
-       steps {
-         git branch: "main", url: "https://github.com/Tangala123/first-mvn"
-       }
-    }
     stage ("maven"){
       when {
-        branch "develop"
+        branch "main"
       }
       steps {
         sh "mvn clean package"
