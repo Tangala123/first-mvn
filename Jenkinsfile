@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage ("maven"){
       when {
-        branch "develop"
+        branch "main"
       }
       steps {
         sh "mvn clean package"
